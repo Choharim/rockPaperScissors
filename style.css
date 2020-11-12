@@ -68,7 +68,7 @@ header > .game_name {
   transition: background-color 0.3s ease;
 }
 
-.choices > .choice:hover {
+.choices > .choice:active {
   cursor: pointer;
   background-color: salmon;
 }
