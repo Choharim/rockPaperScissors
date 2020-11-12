@@ -1,0 +1,85 @@
+body {
+  background-color: #30475e;
+}
+
+header {
+  background-color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header > .game_name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.score_bord {
+  width: 200px;
+  height: 100px;
+  border: 3px solid white;
+  border-radius: 4px;
+  font-size: 40px;
+  color: white;
+  margin: 20px auto;
+  text-align: center;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.score_bord > .badge {
+  background-color: tomato;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 15px;
+}
+
+.score_bord > #user_lable {
+  position: absolute;
+  top: 35px;
+  left: -25px;
+}
+
+.score_bord > #comp_lable {
+  position: absolute;
+  top: 35px;
+  right: -25px;
+}
+
+.result > p {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+.choices {
+  color: white;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.choices > .choice {
+  width: 80px;
+  height: 80px;
+  border: 5px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 20px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.choices > .choice:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.choices i {
+  font-size: 50px;
+  color: sandybrown;
+}
+
+.game_rule {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}

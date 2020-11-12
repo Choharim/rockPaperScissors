@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rockPaperScissors</title>
     <script defer src="index.js"></script>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -13,13 +14,12 @@
   </head>
   <body>
     <header>
-      <h1>Rork Paper Scissors</h1>
+      <span class="game_name">Rork Paper Scissors</span>
     </header>
     <div class="score_bord">
       <div id="user_lable" class="badge">user</div>
+      <span id="user_score">0</span>:<span id="comp_score">0</span>
       <div id="comp_lable" class="badge">comp</div>
-      <span id="user_score">0</span> :
-      <span ids="comp_score">0</span>
     </div>
     <div class="result">
       <p>text</p>
@@ -31,6 +31,6 @@
         <i class="far fa-hand-scissors"></i>
       </div>
     </div>
-    <span>Make your move.</span>
+    <p class="game_rule">Make your move.</p>
   </body>
 </html>
