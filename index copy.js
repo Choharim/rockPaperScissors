@@ -2,13 +2,20 @@ const choices = document.querySelector(".choices");
 const rock = choices.querySelector("#rock");
 const paper = choices.querySelector("#paper");
 const scissors = choices.querySelector("#scissors");
+const result = document.querySelector(".result");
+const resultText = result.querySelector("p");
+const scoreBoard = document.querySelector(".score_bord");
+const userScore = scoreBoard.querySelector("#user_score");
+const compScore = scoreBoard.querySelector("#comp_score");
 
-
-
- function gameStart(event){
-  let array = [];
+let array = [];
   let userChoice =0;
   let compChoice =0;
+  let userTotal = 0;
+  let compTotal = 0;
+
+ function gameStart(event){
+  
   array.push(rock.id);
   array.push(paper.id);
   array.push(scissors.id);
@@ -26,12 +33,17 @@ const scissors = choices.querySelector("#scissors");
     compare();
     function compare(){
       if(userChoice == compChoice){
+
+        resultText.innerText="draw";
         
-       console.log("draw");
       }else if(userChoice-compChoice == 1 || userChoice-compChoice == -2 ){
-        console.log("you are winner!");
+        resultText.innerText="you are winner!";
+       
+        userScore.innerText= userTotal += 1;
+
       }else {
-       console.log("you are loser!");
+        resultText.innerText="you are loser!";
+        compScore.innerText= compTotal += 1;
       }
     }
  }
