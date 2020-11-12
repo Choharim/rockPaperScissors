@@ -9,6 +9,7 @@ let array = [];
 
 function computerChoice(){
  compChoice = Math.floor(Math.random()*3);
+ return compChoice;
 }
 
 
@@ -24,6 +25,7 @@ function computerChoice(){
     choicedId = event.target.parentNode.id;
    }
    userChoice = array.indexOf(choicedId);
+   return userChoice;
  }
 
  function compare(){
@@ -31,6 +33,8 @@ function computerChoice(){
   
  }
 
+console.log(compChoice);
+console.log(userChoice);
  function init(){
  rock.addEventListener("click",personChoice);
  paper.addEventListener("click",personChoice);
