@@ -18,11 +18,6 @@ array.push(rock.id);
 array.push(paper.id);
 array.push(scissors.id);
 
-function offGlow(userChoice){
-  document.getElementById(array[userChoice]).classList.remove("green");
-  document.getElementById(array[userChoice]).classList.remove("blue");
-  document.getElementById(array[userChoice]).classList.remove("red");
-}
 
 function greenGlow(userChoice){
   document.getElementById(array[userChoice]).classList.add("green");
@@ -51,7 +46,6 @@ function computerChoice(){
     choicedId = event.target.parentNode.id;
    }
    userChoice = array.indexOf(choicedId);
-   offGlow(userChoice);
    let compChoice = computerChoice();
    compare(userChoice,compChoice);
  }
@@ -64,16 +58,19 @@ function computerChoice(){
   if(userChoice === compChoice){
     resultText.innerHTML = `${array[userChoice]}${smallUser} vs ${array[compChoice]}${smallComp} Draw ~ try again *_*`;
     greenGlow(userChoice);
+    setTimeout(()=> document.getElementById(array[userChoice]).classList.remove("green"),300);
   }else if (userChoice - compChoice === 1 || userChoice - compChoice === -2){
     resultText.innerHTML = `${array[userChoice]}${smallUser} vs ${array[compChoice]}${smallComp} you are win!! ^_^`;
     userTotal += 1;
     userScore.innerText = userTotal;
     blueGlow(userChoice);
+    setTimeout(()=>document.getElementById(array[userChoice]).classList.remove("blue"),300);
   }else{
     resultText.innerHTML = `${array[userChoice]}${smallUser} vs ${array[compChoice]}${smallComp} you are lose ㅠ^ㅠ`;
     compTotal += 1;
     compScore.innerText = compTotal;
     redGlow(userChoice);
+    setTimeout(()=>document.getElementById(array[userChoice]).classList.remove("red"),300);
   }
   
  }
@@ -81,6 +78,6 @@ function computerChoice(){
  function init(){
  rock.addEventListener("click",personChoice);
  paper.addEventListener("click",personChoice);
- scissors.addEventListener("click",personChoice);
+ scissors.addEventListener("click",personChoice); 
  }
  init();
