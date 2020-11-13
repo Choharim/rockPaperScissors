@@ -24,8 +24,10 @@ let array = [];
    if(event.target.id !== "")
    { 
     choicedId = event.target.id;
+    choiced = event.target;
    }else{
     choicedId = event.target.parentNode.id;
+    choiced = event.target.parentNode;
    }
     userChoice = array.indexOf(choicedId);
     compChoice = Math.floor(Math.random()*3);
@@ -36,9 +38,9 @@ let array = [];
 
         resultText.innerText="draw";
         
+        
       }else if(userChoice-compChoice == 1 || userChoice-compChoice == -2 ){
         resultText.innerText="you are winner!";
-       
         userScore.innerText= userTotal += 1;
 
       }else {
