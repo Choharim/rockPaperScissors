@@ -14,6 +14,11 @@ let compTotal = 0;
 let userTotal = 0;
 let array = [];
 
+function computerChoice(){
+  randomNumber = Math.floor(Math.random()*3);
+  return randomNumber;
+ }
+ 
 
  function personChoice(event){
   array.push(rock.id);
@@ -29,23 +34,23 @@ let array = [];
    }
    userChoice = array.indexOf(choicedId);
 
-   function computerChoice(){
-    compChoice = Math.floor(Math.random()*3);
-   }
-   computerChoice();
+   let compChoice = computerChoice();
    compare(userChoice,compChoice);
  }
 
+
  function compare(userChoice,compChoice){
   
+  const smallUser = "user".fontsize(5).sup();
+  const smallComp = "comp".fontsize(5).sup();
   if(userChoice === compChoice){
-    resultText.innerText = "Draw ~ try again *_*";
+    resultText.innerHTML = `${array[userChoice]}${smallUser} vs ${array[compChoice]}${smallComp} Draw ~ try again *_*`;
   }else if (userChoice - compChoice === 1 || userChoice - compChoice === -2){
-    resultText.innerText = "you are win!! ^_^";
+    resultText.innerHTML = `${array[userChoice]}${smallUser} vs ${array[compChoice]}${smallComp} you are win!! ^_^`;
     userTotal += 1;
     userScore.innerText = userTotal;
   }else{
-    resultText.innerText = "you are lose ㅠ^ㅠ";
+    resultText.innerHTML = `${array[userChoice]}${smallUser} vs ${array[compChoice]}${smallComp} you are lose ㅠ^ㅠ`;
     compTotal += 1;
     compScore.innerText = compTotal;
   }
