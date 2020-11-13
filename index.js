@@ -52,12 +52,9 @@ let array = [];
   
  }
 
-console.log(compChoice);
-console.log(userChoice);
  function init(){
  rock.addEventListener("click",personChoice);
  paper.addEventListener("click",personChoice);
  scissors.addEventListener("click",personChoice);
- 
  }
  init();
